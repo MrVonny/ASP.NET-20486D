@@ -13,6 +13,7 @@ namespace TestMVC.Controllers
 
         private IMyService myClass;
 
+        [MyFilter]
         public IActionResult Index()
         {
             return Content(myClass.Write()+ "\n" + myClass.Write());
