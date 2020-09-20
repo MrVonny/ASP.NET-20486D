@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowCities</title>
+    <link type="text/css" href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    Select City
+    @foreach (var item in ViewBag.Cities)
+    {
+        @await Component.InvokeAsync("City", item.Key)
+    }
+</body>
+</html>
