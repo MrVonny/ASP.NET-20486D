@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEmpty", "TestEmpty\Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestMVC", "TestMVC\TestMVC.csproj", "{1364CF6E-02A4-4476-9597-3718E03ED11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PollBall", "PollBall\PollBall.csproj", "{B966D539-C4A4-45F1-ADC5-CA945511393E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PollBall", "PollBall\PollBall.csproj", "{B966D539-C4A4-45F1-ADC5-CA945511393E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldJourney", "WorldJourney\WorldJourney.csproj", "{A403F332-5BE8-473A-B59D-62C82FB71B93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitiesWebsite", "..\..\..\..\..\Vonny\20486D-DevelopingASPNETMVCWebApplications-master\Allfiles\Mod05\Labfiles\01_CitiesWebsite_begin\CitiesWebsite\CitiesWebsite.csproj", "{78AEE47F-7F2A-46C4-80E8-3C8E2B174602}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A403F332-5BE8-473A-B59D-62C82FB71B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A403F332-5BE8-473A-B59D-62C82FB71B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A403F332-5BE8-473A-B59D-62C82FB71B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78AEE47F-7F2A-46C4-80E8-3C8E2B174602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78AEE47F-7F2A-46C4-80E8-3C8E2B174602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78AEE47F-7F2A-46C4-80E8-3C8E2B174602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78AEE47F-7F2A-46C4-80E8-3C8E2B174602}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
