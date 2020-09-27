@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CitiesWebsite", "CitiesWebs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ButterfliesShop", "ButterfliesShop\ButterfliesShop.csproj", "{E13C88B6-B67C-4BEB-B3C1-09269AC479C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cupcakes", "..\..\..\..\..\20486D\Allfiles\Mod07\Labfiles\01_Cupcakes_begin\Cupcakes\Cupcakes.csproj", "{2B66FB90-C40D-492A-AA38-597D0E0F5BE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cupcakes", "Cupcakes\Cupcakes.csproj", "{3137DF28-F554-4ADA-BE4F-F655C19DE259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{E13C88B6-B67C-4BEB-B3C1-09269AC479C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E13C88B6-B67C-4BEB-B3C1-09269AC479C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E13C88B6-B67C-4BEB-B3C1-09269AC479C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B66FB90-C40D-492A-AA38-597D0E0F5BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B66FB90-C40D-492A-AA38-597D0E0F5BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B66FB90-C40D-492A-AA38-597D0E0F5BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B66FB90-C40D-492A-AA38-597D0E0F5BE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3137DF28-F554-4ADA-BE4F-F655C19DE259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3137DF28-F554-4ADA-BE4F-F655C19DE259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3137DF28-F554-4ADA-BE4F-F655C19DE259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3137DF28-F554-4ADA-BE4F-F655C19DE259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
