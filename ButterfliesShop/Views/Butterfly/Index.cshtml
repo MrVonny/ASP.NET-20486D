@@ -22,12 +22,34 @@
         <div class="img-container">
             @foreach (var item in Model.Butterflies)
             {
-            <div class="photo-display-img">
-                <p>@item.CommonName</p>
-                <p>@item.ButterflyFamily</p>
-                <p>@item.Quantity</p>
-                <p>@item.CreatedDate</p>
-            </div>
+                <h3 display-picture-title>
+                    @Html.DisplayFor(modelItem => item.CommonName)
+                </h3>
+                @if (item.ImageName != null)
+                {
+                    <div photo-display>
+                        <img src="@Url.Action("GetImage","Butterfly", new {Id = item.Id})" />
+                    </div>
+                }
+                <div>
+                    <p display-label>@Html.DisplayNameFor(model => item.ButterflyFamily)</p>
+                    <br />
+                    <p display-field>@Html.DisplayFor(model => item.ButterflyFamily)</p>
+
+                </div>
+                <div display-info>
+                    <p display-label>@Html.DisplayNameFor(model => item.Characteristics)</p>
+                    <p display-field>@Html.DisplayFor(model => item.Characteristics)</p>
+                </div>
+                <div>
+                    <p display-label>@Html.DisplayNameFor(model => item.Quantity)</p>
+                    <p display-field>@Html.DisplayFor(model => item.Quantity)</p>
+                </div>
+                <div>
+                    <p display-label>@Html.DisplayNameFor(model => item.CreatedDate)</p>
+                    <p display-field>@Html.DisplayFor(model => item.CreatedDate)</p>
+                </div>
+
             }
         </div>
     </div>

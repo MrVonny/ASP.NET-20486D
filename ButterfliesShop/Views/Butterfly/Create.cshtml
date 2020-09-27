@@ -1,4 +1,7 @@
-﻿
+﻿@using ButterfliesShop.Models
+
+@model Butterfly
+
 @{
     Layout = null;
 }
@@ -12,5 +15,43 @@
     <link type="text/css" rel="stylesheet" href="~/css/butterflies-shop-styles.css" />
 </head>
 <body>
+    <div container>
+        <h1 main-title>
+            Add Butterflies to the Shop
+        </h1>
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <div class="form-field">
+                <label asp-for="CommonName"></label>
+                <input asp-for="CommonName" />
+                <span asp-validation-for="CommonName"></span>
+            </div>
+            <div form-field>
+                <label asp-for="ButterflyFamily"></label>
+                <select asp-for="ButterflyFamily" asp-items="@Html.GetEnumSelectList<Family>()">
+                    <option selected="selected" value="">Select</option>
+                </select>
+                <span asp-validation-for="ButterflyFamily"></span>
+            </div>
+            <div form-field>
+                <label asp-for="Characteristics"></label>
+                <textarea asp-for="Characteristics"></textarea>
+                <span asp-validation-for="Characteristics"></span>
+            </div>
+            <div form-field>
+                <label asp-for="Quantity"></label>
+                <input asp-for="Quantity" />
+                <span asp-validation-for="Quantity"></span>
+            </div>
+            <div form-filed>
+                <label asp-for="PhotoAvatar"></label>
+                <input type="file" asp-for="PhotoAvatar" />
+                <span asp-validation-for="PhotoAvatar"></span>
+            </div>
+            <div form-field>
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
 </body>
 </html>
