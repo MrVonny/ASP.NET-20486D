@@ -48,7 +48,27 @@ namespace ButterfliesShop.Controllers
             Butterfly requestedButterfly = _data.GetButterflyById(id);
             if (requestedButterfly != null)
             {
-                return null;
+                string webRootpath = _environment.WebRootPath;
+                string folderPath = @"\images\";
+                string fullPath = webRootpath + folderPath + requestedButterfly.ImageName;
+                if (System.IO.File.Exists(fullPath))
+                {
+                    var fileOnDisk = new FileStream(fullPath, FileMode.Open);
+                    byte[] fileBytes;
+                    using (BinaryReader br = new BinaryReader(fileOnDisk))
+                    {
+                        fileBytes = br.ReadBytes((int)fileOnDisk.Length);
+                    }
+
+                    return File(fileBytes, requestedButterfly.ImageMimeType);
+                }
+                else
+                {
+                    if (requestedButterfly.PhotoFile.Length > 0)
+                        return File(requestedButterfly.PhotoFile, requestedButterfly.ImageMimeType);
+                    else
+                        return NotFound();
+                }
             }
             else
             {
@@ -65,22 +85,29 @@ namespace ButterfliesShop.Controllers
         [HttpPost]
         public IActionResult Create(Butterfly butterfly)
         {
-            var lastButterfly = _data.ButterfliesList.LastOrDefault();
-            if (butterfly.PhotoAvatar != null && butterfly.PhotoAvatar.Length > 0)
+            if (ModelState.IsValid)
             {
-                butterfly.ImageMimeType = butterfly.PhotoAvatar.ContentType;
-                butterfly.ImageName = Path.GetFileName(butterfly.PhotoAvatar.FileName);
-                butterfly.Id = lastButterfly.Id + 1;
-                _butterfliesQuantityService.AddButterfliesQuantityData(butterfly);
-                using(MemoryStream memoryStream = new MemoryStream())
+                var lastButterfly = _data.ButterfliesList.LastOrDefault();
+                if (butterfly.PhotoAvatar != null && butterfly.PhotoAvatar.Length > 0)
                 {
-                    butterfly.PhotoAvatar.CopyTo(memoryStream);
-                    butterfly.PhotoFile = memoryStream.ToArray();
+                    butterfly.ImageMimeType = butterfly.PhotoAvatar.ContentType;
+                    butterfly.ImageName = Path.GetFileName(butterfly.PhotoAvatar.FileName);
+                    butterfly.Id = lastButterfly.Id + 1;
+                    _butterfliesQuantityService.AddButterfliesQuantityData(butterfly);
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        butterfly.PhotoAvatar.CopyTo(memoryStream);
+                        butterfly.PhotoFile = memoryStream.ToArray();
+                    }
+                    _data.AddButterfly(butterfly);
+                    return RedirectToAction("Index");
                 }
-                _data.AddButterfly(butterfly);
-                return RedirectToAction("Index");
+                return View(butterfly);
+            } 
+            else
+            {
+                return View(butterfly);
             }
-            return View(butterfly);
         }
     }
 }
